@@ -2240,7 +2240,10 @@ impl SyntaxFactory for JsSyntaxFactory {
                 let mut slots: RawNodeSlots<2usize> = RawNodeSlots::default();
                 let mut current_element = elements.next();
                 if let Some(element) = &current_element {
-                    if matches!(element.kind(), T![var] | T![let] | T![const]) {
+                    if matches!(
+                        element.kind(),
+                        T![var] | T![let] | T![const] | T![using] | T ! [await using]
+                    ) {
                         slots.mark_present();
                         current_element = elements.next();
                     }
@@ -5176,7 +5179,10 @@ impl SyntaxFactory for JsSyntaxFactory {
                 let mut slots: RawNodeSlots<2usize> = RawNodeSlots::default();
                 let mut current_element = elements.next();
                 if let Some(element) = &current_element {
-                    if matches!(element.kind(), T![var] | T![const] | T![let]) {
+                    if matches!(
+                        element.kind(),
+                        T![var] | T![const] | T![let] | T![using] | T ! [await using]
+                    ) {
                         slots.mark_present();
                         current_element = elements.next();
                     }

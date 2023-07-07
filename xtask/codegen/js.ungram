@@ -190,7 +190,7 @@ AnyJsForInOrOfInitializer =
 	| JsForVariableDeclaration
 
 JsForVariableDeclaration =
-	kind_token: ('var' | 'let' | 'const')
+	kind_token: ('var' | 'let' | 'const' | 'using' | 'await using')
 	declarator: JsVariableDeclarator
 
 JsBreakStatement =
@@ -1182,7 +1182,7 @@ JsVariableStatement =
 // let a, b = c;
 // ^^^^^^^^
 JsVariableDeclaration =
-    kind: ('var' | 'const' | 'let')
+    kind: ('var' | 'const' | 'let' | 'using' | 'await using')
     declarators: JsVariableDeclaratorList
 
 JsVariableDeclaratorList = (JsVariableDeclarator (',' JsVariableDeclarator)*)
